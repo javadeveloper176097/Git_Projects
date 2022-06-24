@@ -15,7 +15,23 @@ public class StudentDao
 		Integer z = (Integer)hibertemp.save(student);
 		return z;
 	}
-
+	
+	@Transactional
+	public Student update(Student student)
+	{
+	
+		hibertemp.saveOrUpdate(student);
+		return student;
+		
+	}
+	
+	@Transactional
+	public Student delete(Student student)
+	{
+		hibertemp.delete(student);
+		return student;
+	}
+	
 	public HibernateTemplate getHibertemp() {
 		return hibertemp;
 	}
